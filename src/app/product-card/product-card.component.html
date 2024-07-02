@@ -1,7 +1,9 @@
 <img [src]="product.imgURL" class="card-img-top" alt="...">
+<app-rate [value]="product.rate"></app-rate>
 <div class="card-body">
-    <h5 class="card-title">{{product.name}}</h5>
-    <p class="card-text">{{product.price}} $</p>
+    <h5 class="card-title">{{product.name |uppercase}}</h5>
+    <p class="card-text">{{product.price |currency}} $</p>
+    <p class="card-text">{{product.price | money:"EG"|currency}} EGP</p>
     @if (product.quantity==0) {
     <p class="card-text bg-danger">out of Stock</p>
     }

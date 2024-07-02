@@ -9,6 +9,9 @@ import { AboutComponent } from "./about/about.component";
 import { FooterComponent } from "./footer/footer.component";
 import { ContactComponent } from "./contact/contact.component";
 import { ProductCardComponent } from "./product-card/product-card.component";
+import { RateComponent } from "./rate/rate.component";
+import { StoreService } from "./Services/store.service";
+import { MoneyPipe } from "./Pipes/money.pipe";
 
 //router
 
@@ -20,7 +23,9 @@ import { ProductCardComponent } from "./product-card/product-card.component";
         AboutComponent, 
         FooterComponent,
         ContactComponent,
-        ProductCardComponent
+        ProductCardComponent,
+        RateComponent,
+        MoneyPipe
     ],
 
     // every module i need/use in project 
@@ -29,7 +34,9 @@ import { ProductCardComponent } from "./product-card/product-card.component";
     // exports:[ContactComponent]
 
     // services => DI
-    providers:[],
+    providers:[
+        // StoreService
+    ],
 
     bootstrap:[AppComponent]
 
