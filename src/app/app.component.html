@@ -1,16 +1,6 @@
-<app-nav></app-nav>
 
-<div class="container">
-    <h1>Welcome </h1>
-    <div class="row">
-        @for (item of Products; track $index;) {
 
-        <app-product-card class="col-4 card" [product]="item"></app-product-card>
-    }
-        @empty{
-        <h1>There NO Result Found</h1>
-        }
-    </div>
-</div>
-
-<app-footer></app-footer>
+<router-outlet></router-outlet>
+<!-- 
+login
+register -->

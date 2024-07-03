@@ -4,10 +4,38 @@ import { Injectable } from '@angular/core';
   providedIn:"root"
 })
 export class StoreService {
+  count :number = 0;
   ProductList:Array<any>;
+  Categories:Array<any>;
   constructor() { 
     console.log("Store");
-    
+    this.Categories=[
+      {
+        id: 0,
+        name: "All",
+        desciption: "This is description"
+      },
+      {
+        id: 1,
+        name: "Laptops",
+        desciption: "This is description"
+      },
+      {
+        id: 2,
+        name: "Tablets",
+        desciption: "This is description"
+      },
+      {
+        id: 3,
+        name: "Mobiles",
+        desciption: "This is description"
+      },
+      {
+        id: 4,
+        name: "Accessories",
+        desciption: "This is description"
+      }
+    ]
     this.ProductList = [
       {
         id: 1,
@@ -110,6 +138,15 @@ export class StoreService {
         id: 11
       }
     ]
+  }
+
+  filterByCategoryID(id:number):Array<any>{      
+   if(id == 0 ){
+    return this.ProductList
+   } 
+   else{
+    return this.ProductList.filter((element)=> element.categoryID == id)
+   }
   }
 
   addtolist(product:any){

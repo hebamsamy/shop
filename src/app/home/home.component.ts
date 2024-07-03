@@ -1,18 +1,12 @@
-import { Component} from '@angular/core';
-import { StoreService } from './Services/store.service';
-
+import { Component } from '@angular/core';
+import { StoreService } from '../Services/store.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css'
 })
-
-export class AppComponent  {
-  // binding
-  // banana in box [(ngModel)]
-  // intrerpolation {{}}
- 
+export class HomeComponent {
   Products:Array<any>;
   Categories:Array<any>;
   SelectedID:number = 0;
@@ -30,24 +24,4 @@ export class AppComponent  {
     console.log(this.Products);
     
   }
-
-
-  ngOnDestroy(): void {
-    console.log("ngOnDestroy called");
-  }
-  ngOnInit(): void {
-    console.log(" ngOnInit called");
-  }
-
-
-
-
-
-
-
-  
-  getData() {
-
-  }
-
 }

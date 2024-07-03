@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Welcome </h1>
+    <h2>Filter From Our Categories : </h2>
+    <!-- <select class="form-control" [(ngModel)]="SelectedID" (change)="SelectChange()">
+        @for (item of Categories; track $index) {
+           <option [value]="item.id">{{item.name}}</option> 
+        }
+    </select> -->
+    <select class="form-control" #option (change)="SelectChange(option.value)">
+        @for (item of Categories; track $index) {
+           <option [value]="item.id">{{item.name}}</option> 
+        }
+    </select>
+    <div class="row">
+        @for (item of Products; track $index;) {
+
+        <app-product-card class="col-4 card" [product]="item"></app-product-card>
+    }
+        @empty{
+        <h1>There NO Result Found</h1>
+        }
+    </div>
+</div>
