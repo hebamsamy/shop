@@ -23,6 +23,7 @@ import { AdminlayoutComponent } from "./Components/adminlayout/adminlayout.compo
 import { ProductListComponent } from "./Components/product-list/product-list.component";
 import { AddProductComponent } from "./Components/add-product/add-product.component";
 import { ProductDetailsComponent } from "./Components/product-details/product-details.component";
+import { CartComponent } from "./Components/cart/cart.component";
 
 //router
 
@@ -42,6 +43,7 @@ import { ProductDetailsComponent } from "./Components/product-details/product-de
         RegisterComponent,
         UserlayoutComponent,
         ProductDetailsComponent,
+        CartComponent,
         //admin
         AdminhomeComponent,
         AdminlayoutComponent,

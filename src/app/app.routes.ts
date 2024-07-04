@@ -14,6 +14,7 @@ import { AddProductComponent } from "./Components/add-product/add-product.compon
 import { AdminhomeComponent } from "./Components/adminhome/adminhome.component";
 import { ProductListComponent } from "./Components/product-list/product-list.component";
 import { ProductDetailsComponent } from "./Components/product-details/product-details.component";
+import { CartComponent } from "./Components/cart/cart.component";
 
 
 export let appRoutes: Routes = [
@@ -25,7 +26,8 @@ export let appRoutes: Routes = [
             { path: "home", component: HomeComponent },
             { path: "about", component: AboutComponent },
             { path: "contact", component: ContactComponent },
-            { path: "product/:id", component: ProductDetailsComponent }
+            { path: "product/:id", component: ProductDetailsComponent },
+            { path: "cart", component: CartComponent },
         ]
     },
     {

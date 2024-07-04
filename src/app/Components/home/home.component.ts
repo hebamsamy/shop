@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { StoreService } from '../../Services/store.service';
+import { IProduct } from '../../Types/product';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { StoreService } from '../../Services/store.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  Products:Array<any>;
+  Products:Array<IProduct>;
   Categories:Array<any>;
   SelectedID:number = 0;
   // tes= new StoreService()

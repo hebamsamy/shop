@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { IProduct } from '../Types/product';
 
 @Injectable({
   providedIn:"root"
 })
 export class StoreService {
   count :number = 0;
-  ProductList:Array<any>;
+  ProductList:Array<IProduct>;
   Categories:Array<any>;
   constructor() { 
     console.log("Store");
