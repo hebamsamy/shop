@@ -1,0 +1,47 @@
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="send()">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input formControlName="email" type="email" class="form-control" 
+          [ngClass]="{
+            'is-valid': form.controls['email'].valid, 
+            'is-invalid': form.controls['email'].invalid && form.controls['email'].dirty
+            }">
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            <!-- Please Email Like : Admin&commat;gmail.com . -->
+             @if(form.controls['email'].hasError("required")){
+                 <span>Please Provide Valid Email</span>
+             }
+             @else if(form.controls['email'].hasError("email")) {
+                 <span>Email must have letter &commat;</span>
+             }
+             @else if(form.controls['email'].hasError("minlength")) {
+                 <span>Email must have 11 Letter atleast.</span>
+             }
+
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input formControlName="password" type="password" class="form-control" 
+          [ngClass]="{
+            'is-valid': form.controls['password'].valid, 
+            'is-invalid': form.controls['password'].invalid && form.controls['password'].dirty
+            }">
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please Password contains 8 letters atlest and has Lower case and upper case and number and spical caracter.
+          </div>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Submit</button>
+      </form>
+</div>

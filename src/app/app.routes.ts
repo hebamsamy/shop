@@ -2,18 +2,18 @@
 //    /about=>
 
 import { Routes } from "@angular/router";
-import { HomeComponent } from "./home/home.component";
-import { LoginComponent } from "./login/login.component";
-import { ContactComponent } from "./contact/contact.component";
-import { AboutComponent } from "./about/about.component";
-import { RegisterComponent } from "./register/register.component";
-import { NotFoundComponent } from "./not-found/not-found.component";
-import { UserlayoutComponent } from "./userlayout/userlayout.component";
-import { AdminlayoutComponent } from "./adminlayout/adminlayout.component";
-import { AddProductComponent } from "./add-product/add-product.component";
-import { AdminhomeComponent } from "./adminhome/adminhome.component";
-import { ProductListComponent } from "./product-list/product-list.component";
-import { ProductDetailsComponent } from "./product-details/product-details.component";
+import { HomeComponent } from "./Components/home/home.component";
+import { LoginComponent } from "./Components/login/login.component";
+import { ContactComponent } from "./Components/contact/contact.component";
+import { AboutComponent } from "./Components/about/about.component";
+import { RegisterComponent } from "./Components/register/register.component";
+import { NotFoundComponent } from "./Components/not-found/not-found.component";
+import { UserlayoutComponent } from "./Components/userlayout/userlayout.component";
+import { AdminlayoutComponent } from "./Components/adminlayout/adminlayout.component";
+import { AddProductComponent } from "./Components/add-product/add-product.component";
+import { AdminhomeComponent } from "./Components/adminhome/adminhome.component";
+import { ProductListComponent } from "./Components/product-list/product-list.component";
+import { ProductDetailsComponent } from "./Components/product-details/product-details.component";
 
 
 export let appRoutes: Routes = [
