@@ -3,7 +3,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
 import { NavComponent } from "./Components/nav/nav.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, provideHttpClient } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
 import { AboutComponent } from "./Components/about/about.component";
 import { FooterComponent } from "./Components/footer/footer.component";
@@ -57,7 +57,7 @@ import { CartComponent } from "./Components/cart/cart.component";
         BrowserModule, 
         FormsModule, 
         RouterModule.forRoot(appRoutes),
-        ReactiveFormsModule
+        ReactiveFormsModule,
     ],
 
     // exports:[ContactComponent]
@@ -65,6 +65,7 @@ import { CartComponent } from "./Components/cart/cart.component";
     // services => DI
     providers:[
         // StoreService
+        provideHttpClient()
     ],
 
     bootstrap:[AppComponent]

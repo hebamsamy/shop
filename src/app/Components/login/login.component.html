@@ -1,41 +1,38 @@
 <div class="container">
     <form [formGroup]="form" (ngSubmit)="send()">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input formControlName="email" type="email" class="form-control" 
+          <label for="exampleInputUserName1" class="form-label">User Name</label>
+          <input formControlName="UserName" type="text" class="form-control" 
           [ngClass]="{
-            'is-valid': form.controls['email'].valid, 
-            'is-invalid': form.controls['email'].invalid && form.controls['email'].dirty
+            'is-valid': form.controls['UserName'].valid, 
+            'is-invalid': form.controls['UserName'].invalid && form.controls['UserName'].dirty
             }">
           <div class="valid-feedback">
             Looks good!
           </div>
           <div class="invalid-feedback">
-            <!-- Please Email Like : Admin&commat;gmail.com . -->
-             @if(form.controls['email'].hasError("required")){
-                 <span>Please Provide Valid Email</span>
+            <!-- Please UserName Like : Admin&commat;gmail.com . -->
+             @if(form.controls['UserName'].hasError("required")){
+                 <span>Please Provide Valid UserName</span>
              }
-             @else if(form.controls['email'].hasError("email")) {
-                 <span>Email must have letter &commat;</span>
-             }
-             @else if(form.controls['email'].hasError("minlength")) {
-                 <span>Email must have 11 Letter atleast.</span>
+             @else if(form.controls['UserName'].hasError("pattern")) {
+                 <span>UserName must have 11 Letter atleast.</span>
              }
 
           </div>
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input formControlName="password" type="password" class="form-control" 
+          <input formControlName="Password" type="password" class="form-control" 
           [ngClass]="{
-            'is-valid': form.controls['password'].valid, 
-            'is-invalid': form.controls['password'].invalid && form.controls['password'].dirty
+            'is-valid': form.controls['Password'].valid, 
+            'is-invalid': form.controls['Password'].invalid && form.controls['Password'].dirty
             }">
           <div class="valid-feedback">
             Looks good!
           </div>
           <div class="invalid-feedback">
-            Please Password contains 8 letters atlest and has Lower case and upper case and number and spical caracter.
+            Please Password contains 8 letters atlest and has Lower case and numbers.
           </div>
         </div>
         <div class="mb-3 form-check">
