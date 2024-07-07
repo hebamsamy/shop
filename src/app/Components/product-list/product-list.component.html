@@ -5,6 +5,7 @@
         <th scope="col">Name</th>
         <th scope="col">Description</th>
         <th scope="col">price</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -14,6 +15,9 @@
                 <td>{{item.name}}</td>
                 <td>{{item.description}}</td>
                 <td>{{item.price}}</td>
+                <td>
+                  <button routerLink="/admin/edit/{{item.id}}">Edit</button>
+                </td>
               </tr>
         }
       

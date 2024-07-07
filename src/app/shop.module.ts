@@ -24,6 +24,7 @@ import { ProductListComponent } from "./Components/product-list/product-list.com
 import { AddProductComponent } from "./Components/add-product/add-product.component";
 import { ProductDetailsComponent } from "./Components/product-details/product-details.component";
 import { CartComponent } from "./Components/cart/cart.component";
+import { EditProductComponent } from "./Components/edit-product/edit-product.component";
 
 //router
 
@@ -49,6 +50,7 @@ import { CartComponent } from "./Components/cart/cart.component";
         AdminlayoutComponent,
         ProductListComponent,
         AddProductComponent,
+        EditProductComponent,
         MoneyPipe
     ],
 

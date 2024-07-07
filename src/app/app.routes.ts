@@ -15,6 +15,7 @@ import { AdminhomeComponent } from "./Components/adminhome/adminhome.component";
 import { ProductListComponent } from "./Components/product-list/product-list.component";
 import { ProductDetailsComponent } from "./Components/product-details/product-details.component";
 import { CartComponent } from "./Components/cart/cart.component";
+import { EditProductComponent } from "./Components/edit-product/edit-product.component";
 
 
 export let appRoutes: Routes = [
@@ -35,6 +36,7 @@ export let appRoutes: Routes = [
             { path: "", redirectTo: "home", pathMatch: "full" },
             { path: 'home', component: AdminhomeComponent },
             { path: 'add', component: AddProductComponent },
+            { path: 'edit/:id', component: EditProductComponent },
             { path: 'list', component: ProductListComponent },
         ]
     },

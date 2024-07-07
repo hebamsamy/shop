@@ -1,1 +1,116 @@
-<p>add-product works!</p>
+<div class="card shadow border-0 mb-7 ">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h5 class="m-6">Create Product</h5>
+      <div class="mx-n1">
+        <a style="font-size: 20px;" routerLink="/admin/list" class="btn d-inline-flex btn-sm btn-primary mx-1">
+          <span class="pe-2">
+            <i class="bi bi-list"></i>
+          </span>
+          <span>Go back to Product List</span>
+        </a>
+      </div>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="Send()">
+      <div class="row m-5 mb-0">
+        <div class="col-md-6 col-sm-12">
+          <div class="mb-3">
+            <label class="form-label">Product Name</label>
+            <input type="text" class="form-control" formControlName="Name" 
+            [ngClass]="{
+              'is-invalid':form.controls['Name'].invalid && form.controls['Name'].touched,
+              'is-valid':form.controls['Name'].valid && form.controls['Name'].touched,
+              }">
+           
+            <div  class="invalid-feedback">
+              <span >
+                Please Provide a correct Product name
+              </span>
+              <span>
+                Product name must contain more than 3 letters.
+              </span>
+            </div>
+            
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+          
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Product Price</label>
+            <input type="number" class="form-control"  formControlName="Price" [ngClass]="{
+              'is-invalid':form.controls['Price'].invalid && form.controls['Price'].touched,
+              'is-valid':form.controls['Price'].valid && form.controls['Price'].touched,
+              }">
+            <div class="invalid-feedback">
+              <span >
+                Please Provide a correct Product Price
+              </span>
+              <span >
+                Product price must more than 10 pound.
+              </span>
+            </div>
+            <div  class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Product Description</label>
+            <textarea class="form-control"  formControlName="Description"
+            [ngClass]="{
+              'is-invalid':form.controls['Description'].invalid && form.controls['Description'].touched,
+              'is-valid':form.controls['Description'].valid && form.controls['Description'].touched,
+              }"
+            ></textarea>
+            <div class="invalid-feedback">
+              <span >
+                Please Provide a correct Product description
+              </span>
+              <span >
+                Product description must contain more than 10 letters.
+              </span>
+            </div>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="mb-3">
+                <label class="form-label">Product Quantity</label>
+                <input type="number" class="form-control" formControlName="Quantity"
+                [ngClass]="{
+                  'is-invalid':form.controls['Quantity'].invalid && form.controls['Quantity'].touched,
+                  'is-valid':form.controls['Quantity'].valid && form.controls['Quantity'].touched,
+                  }">
+                <div class="invalid-feedback">
+                  <span>
+                    Please Provide a correct Product quantity
+                  </span>
+                  <span>
+                    Product quantity must be more than 1
+                  </span>
+                </div>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+          <div class="mb-3">
+            <label class="form-label" for="">Product Image</label>
+            <input type="file" multiple accept="image/*" class="form-control" #immg (change)="choose(immg)">
+            <span class="invalid-feedback">Choose Product Image Please</span>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="">Product Category</label>
+            <input type="number" class="form-control" formControlName="CategoryID"
+            [ngClass]="{
+              'is-invalid':form.controls['CategoryID'].invalid && form.controls['CategoryID'].touched,
+              'is-valid':form.controls['CategoryID'].valid && form.controls['CategoryID'].touched,
+              }">
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center align-items-center mb-5">
+        <button type="submit" [disabled]="form.invalid"  class="btn btn-primary">Add Product</button>
+      </div>
+    </form>
+  </div>
