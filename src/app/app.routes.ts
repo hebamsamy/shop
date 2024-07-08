@@ -21,6 +21,7 @@ import { authGuard } from "./Services/Gaurds/auth.guard";
 
 export let appRoutes: Routes = [
     { path: "", redirectTo: "home", pathMatch: "full" },
+    { path: "login", component: LoginComponent },
     { path: "login/:returnUrl", component: LoginComponent },
     { path: "register", component: RegisterComponent },
     {

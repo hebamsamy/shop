@@ -23,6 +23,7 @@
           <ul class="dropdown-menu">
             @if(isuserExist){
             <li><a class="dropdown-item">Profile</a></li>
+            <li><a class="dropdown-item" routerLink="/admin">Admin Dashbourd</a></li>
             <li><a class="dropdown-item" (click)="logout()">LogOut</a></li>
             }@else {
             <li><a class="dropdown-item" routerLink="/login/">login</a></li>
