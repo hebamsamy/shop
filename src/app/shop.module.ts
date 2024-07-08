@@ -3,7 +3,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
 import { NavComponent } from "./Components/nav/nav.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule, provideHttpClient } from "@angular/common/http";
+import { HttpClientModule, provideHttpClient, withInterceptors } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
 import { AboutComponent } from "./Components/about/about.component";
 import { FooterComponent } from "./Components/footer/footer.component";
@@ -25,6 +25,7 @@ import { AddProductComponent } from "./Components/add-product/add-product.compon
 import { ProductDetailsComponent } from "./Components/product-details/product-details.component";
 import { CartComponent } from "./Components/cart/cart.component";
 import { EditProductComponent } from "./Components/edit-product/edit-product.component";
+import { headerInterceptor } from "./Services/Interceptors/header.interceptor";
 
 //router
 
@@ -67,7 +68,9 @@ import { EditProductComponent } from "./Components/edit-product/edit-product.com
     // services => DI
     providers:[
         // StoreService
-        provideHttpClient()
+        provideHttpClient(
+            withInterceptors([headerInterceptor])
+        )
     ],
 
     bootstrap:[AppComponent]

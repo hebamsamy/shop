@@ -16,11 +16,12 @@ import { ProductListComponent } from "./Components/product-list/product-list.com
 import { ProductDetailsComponent } from "./Components/product-details/product-details.component";
 import { CartComponent } from "./Components/cart/cart.component";
 import { EditProductComponent } from "./Components/edit-product/edit-product.component";
+import { authGuard } from "./Services/Gaurds/auth.guard";
 
 
 export let appRoutes: Routes = [
     { path: "", redirectTo: "home", pathMatch: "full" },
-    { path: "login", component: LoginComponent },
+    { path: "login/:returnUrl", component: LoginComponent },
     { path: "register", component: RegisterComponent },
     {
         path: "", component: UserlayoutComponent, children: [
@@ -28,14 +29,15 @@ export let appRoutes: Routes = [
             { path: "about", component: AboutComponent },
             { path: "contact", component: ContactComponent },
             { path: "product/:id", component: ProductDetailsComponent },
-            { path: "cart", component: CartComponent },
+            { path: "cart", component: CartComponent,canActivate:[authGuard] },
         ]
     },
     {
-        path: "admin", component: AdminlayoutComponent, children: [
+        path: "admin", component: AdminlayoutComponent, canActivate:[authGuard], 
+        children: [
             { path: "", redirectTo: "home", pathMatch: "full" },
-            { path: 'home', component: AdminhomeComponent },
-            { path: 'add', component: AddProductComponent },
+            { path: 'home', component: AdminhomeComponent},
+            { path: 'add', component: AddProductComponent},
             { path: 'edit/:id', component: EditProductComponent },
             { path: 'list', component: ProductListComponent },
         ]
