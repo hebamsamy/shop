@@ -10,7 +10,7 @@ export class ProductService {
   editUrl= ""
   getOneUrl=''
   deletaUrl=''
-  addUrl= "https://localhost:64346/Product/Add";
+  addUrl= "http://localhost:5170/api/Product/add";
 
   constructor(private http: HttpClient) {
   }

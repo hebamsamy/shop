@@ -6,11 +6,11 @@ import { userLogin } from '../Types/user';
   providedIn: 'root'
 })
 export class AccountService {
-  urlLogin = "https://localhost:64346/Account/SignIn"
+  urlLogin = "http://localhost:5170/api/Account/login"
 
   constructor(private http: HttpClient) { }
 
-  login(obj: userLogin) {
+  login(obj: any) {
     return this.http.post(this.urlLogin, obj)
   }
   signUp(){

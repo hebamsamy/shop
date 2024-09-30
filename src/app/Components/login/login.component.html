@@ -1,22 +1,22 @@
 <div class="container">
     <form [formGroup]="form" (ngSubmit)="send()">
         <div class="mb-3">
-          <label for="exampleInputUserName1" class="form-label">User Name</label>
-          <input formControlName="UserName" type="text" class="form-control" 
+          <label for="exampleInputloginMethod1" class="form-label">User Name Or Email Address</label>
+          <input formControlName="loginMethod" type="text" class="form-control" 
           [ngClass]="{
-            'is-valid': form.controls['UserName'].valid, 
-            'is-invalid': form.controls['UserName'].invalid && form.controls['UserName'].dirty
+            'is-valid': form.controls['loginMethod'].valid, 
+            'is-invalid': form.controls['loginMethod'].invalid && form.controls['loginMethod'].dirty
             }">
           <div class="valid-feedback">
             Looks good!
           </div>
           <div class="invalid-feedback">
-            <!-- Please UserName Like : Admin&commat;gmail.com . -->
-             @if(form.controls['UserName'].hasError("required")){
-                 <span>Please Provide Valid UserName</span>
+            <!-- Please loginMethod Like : Admin&commat;gmail.com . -->
+             @if(form.controls['loginMethod'].hasError("required")){
+                 <span>Please Provide Valid loginMethod</span>
              }
-             @else if(form.controls['UserName'].hasError("pattern")) {
-                 <span>UserName must have 11 Letter atleast.</span>
+             @else if(form.controls['loginMethod'].hasError("pattern")) {
+                 <span>loginMethod must have 11 Letter atleast.</span>
              }
 
           </div>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductService } from '../../Services/product.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CategroyService } from '../../Services/Categroy.service';
 
 @Component({
   selector: 'app-add-product',
@@ -11,13 +12,17 @@ import { Router } from '@angular/router';
 export class AddProductComponent {
   form: FormGroup;
   productData: FormData;
-
+  catList :any[] = []
 
   constructor(
     private prdServ: ProductService,
     private builder: FormBuilder,
-  private router:Router) {
-
+  private router:Router,
+  private CatServ:CategroyService
+) {
+  this.CatServ.getAll().subscribe((res:any)=>{
+    this.catList = res
+  })
     this.productData = new FormData();
 
     this.form = this.builder.group({
@@ -40,7 +45,7 @@ export class AddProductComponent {
     this.prdServ.addProduct(this.productData).subscribe({
       next: (res) => {
         console.log(res);
-        this.router.navigateByUrl('/admin/list')
+        // this.router.navigateByUrl('/admin/list')
         // this.form.reset()
         // this.productData = new FormData()
       },

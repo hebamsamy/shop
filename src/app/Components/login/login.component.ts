@@ -22,7 +22,7 @@ export class LoginComponent {
     //<Form>   => Group
     //<input>  => Control
     this.form = this.builder.group({
-      UserName: ["", [Validators.required, Validators.pattern(/^[a-zA-Z]([a-zA-Z0-9]{0,28}|[a-zA-Z0-9]{0,26}[_.]?[a-zA-Z0-9]{0,26}|[a-zA-Z0-9]{0,27}[_.]?|[_.]?[a-zA-Z0-9]{0,27})[a-zA-Z0-9]$/)]],
+      loginMethod: ["", [Validators.required, Validators.pattern(/^[a-zA-Z]([a-zA-Z0-9]{0,28}|[a-zA-Z0-9]{0,26}[_.]?[a-zA-Z0-9]{0,26}|[a-zA-Z0-9]{0,27}[_.]?|[_.]?[a-zA-Z0-9]{0,27})[a-zA-Z0-9]$/)]],
       Password: ["", [Validators.required, Validators.minLength(8)]],
     })
 
@@ -39,10 +39,16 @@ export class LoginComponent {
     //   RemembeMe:false
     // }
     
-    this.accServ.login(this.form.value as userLogin).subscribe({
+    this.accServ.login(this.form.value).subscribe({
       next:(res:any)=>{
-        this.authServ.userlogin(res.token);
-        this.router.navigateByUrl(this.returnUrl)
+        console.log(res);
+        
+        if(res.success == true){
+          this.authServ.userlogin(res.result);
+          this.router.navigateByUrl(this.returnUrl)
+
+        }
+        
       },
       error:(err)=>{
         console.log(err);

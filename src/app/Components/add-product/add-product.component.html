@@ -101,11 +101,15 @@
           </div>
           <div class="mb-3">
             <label class="form-label" for="">Product Category</label>
-            <input type="number" class="form-control" formControlName="CategoryID"
+            <select class="form-control" formControlName="CategoryID"
             [ngClass]="{
               'is-invalid':form.controls['CategoryID'].invalid && form.controls['CategoryID'].touched,
               'is-valid':form.controls['CategoryID'].valid && form.controls['CategoryID'].touched,
               }">
+              @for (item of catList; track $index) {
+                <option [value]="item.id">{{item.name}}</option>
+              }
+              </select>
           </div>
         </div>
       </div>
